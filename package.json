@@ -1,0 +1,20 @@
+{
+  "name": "ufrt-rocket-sim",
+  "version": "1.0.0",
+  "description": "An online simulation tool that can compute a rocket trajectory based on inputted parameters",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucasgrinspan/ufrt-rocket-sim.git"
+  },
+  "author": "Lucas Grinspan",
+  "contributors": ["Lucas Grinspan", "Ajay Patel"],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lucasgrinspan/ufrt-rocket-sim/issues"
+  },
+  "homepage": "https://github.com/lucasgrinspan/ufrt-rocket-sim#readme"
+}
