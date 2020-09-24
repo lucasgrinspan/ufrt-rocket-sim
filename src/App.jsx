@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import "./App.css";
-import Input from "./components/Input";
+import Inputs from "./components/Input";
 import Graph from "./components/Graph";
+import Simulations from "./components/Simulations";
 
 class App extends Component {
     render() {
@@ -10,7 +11,8 @@ class App extends Component {
                 <h1>Rocket Simulator</h1>
                 <div className="main">
                     <Graph></Graph>
-                    <Input></Input>
+                    <Inputs></Inputs>
+                    <Simulations></Simulations>
                 </div>
             </div>
         );

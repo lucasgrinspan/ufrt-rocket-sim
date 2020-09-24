@@ -1,8 +1,12 @@
 import React from "react";
 
-const Input = ({}) => {
+const Inputs = ({}) => {
     return (
-        <div>
+        <div className="inputs card">
+            <div className="title-row">
+                <h2>Input</h2>
+                <button className="primary">Add</button>
+            </div>
             <label className="form-group">
                 Size
                 <div className="with-unit">
@@ -19,4 +23,4 @@ const Input = ({}) => {
     );
 };
 
-export default Input;
+export default Inputs;
