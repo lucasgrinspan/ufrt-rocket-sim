@@ -57,7 +57,7 @@ button {
 }
 button:active {
     box-shadow: var(--inner-shadow);
-    transform: scale(0.97);
+    transform: scale(0.95);
 }
 button:hover {
     cursor: pointer;
@@ -115,6 +115,7 @@ button.primary:hover {
     background-color: var(--card);
     padding: var(--card-padding);
     border-radius: 5px;
+    box-shadow: var(--shadow);
 }
 .form-group {
     display: flex;
