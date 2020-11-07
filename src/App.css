@@ -1,12 +1,15 @@
 :root {
     --blue: #377fcd;
     --green: #39ab39;
-    --green-light: #95c99c;
+    --green-light: #54d365;
+    --text-light: #a4a4a4;
+    --text-medium: #4a4a4a;
+    --text-dark: #181818;
     --inner-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
     --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
     --bg: rgb(238, 238, 238);
     --card: rgb(211, 211, 211);
-    --gutter: 20px;
+    --gutter: 10px;
     --card-padding: 15px;
     --interactable-border: 1px solid #000000;
     --interactable-border-focus: 1px solid var(--blue);
@@ -53,7 +56,7 @@ button {
     box-shadow: var(--shadow);
     border: none;
     color: #000000;
-    transition: all 250ms ease-in-out;
+    transition: all 100ms ease-in-out;
 }
 button:active {
     box-shadow: var(--inner-shadow);
@@ -63,13 +66,24 @@ button:hover {
     cursor: pointer;
 }
 button.primary {
-    border: 1px solid var(--green);
     color: #000000;
     background-color: var(--green-light);
+}
+button.secondary {
+    border: 1px solid var(--green);
+    color: #000000;
+    background-color: transparent;
 }
 button.primary:hover {
     background-color: var(--green);
     color: #ffffff;
+}
+button.secondary:hover {
+    background-color: var(--green);
+    color: #ffffff;
+}
+button[type="submit"] {
+    width: 100%;
 }
 .title-row {
     margin-bottom: 10px;
@@ -81,13 +95,21 @@ button.primary:hover {
 .title-row h2 {
     margin-bottom: 0;
 }
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 1024px;
+}
 .main {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
-    max-width: 100%;
     justify-content: center;
+}
+.main > * {
+    margin: var(--gutter);
 }
 @media only screen and (max-width: 1600px) {
     .main {
@@ -95,24 +117,23 @@ button.primary:hover {
     }
 }
 .graph {
-    width: 400px;
-    height: 300px;
-    background-color: #000000;
-    margin-right: 20px;
-    border-radius: 5px;
-    resize: both;
-    overflow: auto;
+    background-color: #ffffff;
     margin-top: var(--gutter);
+    border-radius: 5px;
+    flex-grow: 1;
+    min-width: 300px;
+    height: 400px;
+    padding: 10px;
 }
 .inputs {
     flex: 1;
+    min-width: 250px;
 }
 .simulations {
     width: 100%;
 }
 .card {
-    margin-top: var(--gutter);
-    background-color: var(--card);
+    background-color: white;
     padding: var(--card-padding);
     border-radius: 5px;
     box-shadow: var(--shadow);
@@ -123,6 +144,12 @@ button.primary:hover {
     max-width: 10rem;
     margin-bottom: 1rem;
 }
+.form-group.checkbox {
+    flex-direction: row;
+}
+.form-group.checkbox input {
+    margin-right: 10px;
+}
 .with-unit {
     display: flex;
     flex-direction: row;
@@ -132,4 +159,31 @@ button.primary:hover {
 }
 .with-unit input {
     margin-right: 5px;
+}
+.presets-container {
+    margin-left: calc(-1 * var(--card-padding));
+    margin-right: calc(-1 * var(--card-padding));
+    margin-bottom: calc(-1 * var(--card-padding));
+}
+.presets-container > * {
+    border-top: 1px solid var(--text-light);
+}
+.presets-container > *:last-child {
+    border-bottom: 1px solid var(--text-light);
+}
+.preset {
+    color: var(--text-medium);
+    padding-left: var(--card-padding);
+    padding-right: var(--card-padding);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.preset button {
+    margin: auto 0;
+}
+.preset-value {
+    font-weight: bold;
+    color: var(--text-dark);
+    margin-right: 2rem;
 }
