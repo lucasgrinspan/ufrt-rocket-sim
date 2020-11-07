@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import solveTrajectory from "../math/index";
+import React from "react";
 
 const Inputs = ({ onPresetSave, values, onValueChange, onCalculate }) => {
     const savePreset = (e) => {
