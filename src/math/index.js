@@ -3,9 +3,15 @@ import funcGenerator from "./trajectoryWithWind";
 
 export default (weight, thrust, thrustDuration) => {
     let data = [
-        { id: "Altitude", data: [] },
-        { id: "Velocity", data: [] },
-        { id: "Downrange", data: [] },
+        { id: "Altitude", data: [], axisBottom: "Time (s)", axisLeft: "Altitude (m)" },
+        { id: "Velocity", data: [], axisBottom: "Time (s)", axisLeft: "Velocity (m/s)" },
+        { id: "Downrange", data: [], axisBottom: "Downrange (m)", axisLeft: "Altitude (m)" },
+        {
+            id: "Trajectory",
+            data: { x: [], y: [], z: [], type: "scatter3d", mode: "lines" },
+            axisBottom: "Downrange (m)",
+            axisLeft: "Altitude (m)",
+        },
     ];
 
     let y0 = [0, 0, 0, 0, Math.PI / 2, 0];
@@ -25,7 +31,14 @@ export default (weight, thrust, thrustDuration) => {
             data[0].data.push({ x: integrator.t, y: -1 * integrator.y[1] });
             data[1].data.push({ x: integrator.t, y: integrator.y[2] });
             data[2].data.push({ x: integrator.y[0], y: -1 * integrator.y[1] });
+            data[3].data.y.push(integrator.t);
+            data[3].data.x.push(integrator.y[0]);
+            data[3].data.z.push(-1 * integrator.y[1]);
         }
     }
+
+    // reverse the down range data
+    data[2].data.reverse();
+
     return data;
 };
