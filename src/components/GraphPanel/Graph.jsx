@@ -1,13 +1,12 @@
 import React, { useMemo } from "react";
-import LineChart from "./Chart/LineChart";
 import { ResponsiveLine } from "@nivo/line";
 
-const Graph = ({ data }) => {
+const Graph = ({ data, thrustEnd }) => {
     if (data) {
         return (
             <div className="graph">
                 <ResponsiveLine
-                    data={[data.values[0]]}
+                    data={[data]}
                     curve="linear"
                     margin={{ top: 5, bottom: 50, left: 50, right: 10 }}
                     enableGridX={false}
@@ -36,7 +35,7 @@ const Graph = ({ data }) => {
                     markers={[
                         {
                             axis: "x",
-                            value: data.thrustEnd,
+                            value: thrustEnd,
                             lineStyle: {
                                 stroke: "#b0413e",
                                 strokeWidth: 2,

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import Inputs from "./components/Input";
-import Graph from "./components/Graph";
 import Simulations from "./components/Simulations";
+import GraphPanel from "./components/GraphPanel/GraphPanel";
 import solveTrajectory from "./math/index";
 
 const App = () => {
@@ -31,7 +31,7 @@ const App = () => {
         <div className="container">
             <h1>Rocket Simulator</h1>
             <div className="main">
-                <Graph data={data}></Graph>
+                <GraphPanel data={data} thrustEnd={values.thrustDuration} />
                 <Inputs
                     onPresetSave={(d) => setPresets([...presets, d])}
                     values={values}

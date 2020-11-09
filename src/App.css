@@ -9,6 +9,7 @@
     --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
     --bg: rgb(238, 238, 238);
     --card: rgb(211, 211, 211);
+    --card-inactive: rgb(147, 147, 147);
     --gutter: 10px;
     --card-padding: 15px;
     --interactable-border: 1px solid #000000;
@@ -85,6 +86,21 @@ button.secondary:hover {
 button[type="submit"] {
     width: 100%;
 }
+.tabs {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.tabs button {
+    background-color: var(--card);
+    border-radius: 5px 5px 0 0;
+    margin: 0;
+    border: none;
+    box-shadow: none;
+}
+.tabs button.active {
+    background-color: white;
+}
 .title-row {
     margin-bottom: 10px;
     display: flex;
@@ -117,13 +133,17 @@ button[type="submit"] {
     }
 }
 .graph {
-    background-color: #ffffff;
-    margin-top: var(--gutter);
-    border-radius: 5px;
-    flex-grow: 1;
-    min-width: 300px;
-    height: 400px;
     padding: 10px;
+    background-color: #ffffff;
+    height: 400px;
+    min-width: 300px;
+    border-radius: 5px;
+    border-top-left-radius: 0;
+    box-shadow: var(--shadow);
+}
+.graph-container {
+    flex-grow: 1;
+    margin-top: var(--gutter);
 }
 .inputs {
     flex: 1;
