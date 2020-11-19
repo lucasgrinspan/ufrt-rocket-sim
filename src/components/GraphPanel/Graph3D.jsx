@@ -36,7 +36,7 @@ const Graph3D = ({ data }) => {
                 useResizeHandler={true}
             />
         );
-    }, []);
+    }, [data]);
     return Plot3D;
 };
 
