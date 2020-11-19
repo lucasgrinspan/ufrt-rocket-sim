@@ -7,9 +7,14 @@ import solveTrajectory from "./math/index";
 
 const App = () => {
     const initialValues = {
-        weight: 25,
+        weight: 1,
         thrust: 300,
         thrustDuration: 1,
+        wind: 0,
+        length: 1.5,
+        diameter: 0.038,
+        finSpan: 0.02,
+        finChord: 0.2,
     };
     const [data, setData] = useState(undefined);
     const [presets, setPresets] = useState([]);
@@ -17,10 +22,28 @@ const App = () => {
 
     const calculate = (v) => {
         if (v) {
-            const data = solveTrajectory(v.weight, v.thrust, v.thrustDuration);
+            const data = solveTrajectory(
+                v.wind,
+                v.weight,
+                v.thrust,
+                v.thrustDuration,
+                v.length,
+                v.diameter,
+                v.finSpan,
+                v.finChord
+            );
             setData(data);
         } else {
-            const data = solveTrajectory(values.weight, values.thrust, values.thrustDuration);
+            const data = solveTrajectory(
+                values.wind,
+                values.weight,
+                values.thrust,
+                values.thrustDuration,
+                values.length,
+                values.diameter,
+                values.finSpan,
+                values.finChord
+            );
             setData(data);
         }
     };

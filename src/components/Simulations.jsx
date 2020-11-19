@@ -22,6 +22,7 @@ const Simulations = ({ presets, loadPreset }) => {
                                     T: <span className="preset-value">{preset.thrust}</span>
                                     ΔT:{" "}
                                     <span className="preset-value">{preset.thrustDuration}</span>
+                                    v: <span className="preset-value">{preset.wind}</span>
                                 </p>
                                 <button
                                     type="button"

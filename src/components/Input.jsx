@@ -29,6 +29,7 @@ const Inputs = ({ onPresetSave, values, onValueChange, onCalculate }) => {
                             value={values.weight}
                             onChange={(e) => onValueChange({ ...values, weight: e.target.value })}
                             min={0}
+                            step={0.1}
                         />{" "}
                         kg
                     </div>
@@ -41,6 +42,7 @@ const Inputs = ({ onPresetSave, values, onValueChange, onCalculate }) => {
                             value={values.thrust}
                             onChange={(e) => onValueChange({ ...values, thrust: e.target.value })}
                             min={0}
+                            step={0.1}
                         />{" "}
                         N
                     </div>
@@ -55,8 +57,74 @@ const Inputs = ({ onPresetSave, values, onValueChange, onCalculate }) => {
                                 onValueChange({ ...values, thrustDuration: e.target.value })
                             }
                             min={0}
+                            step={0.1}
                         />{" "}
                         s
+                    </div>
+                </label>
+                <label className="form-group">
+                    Wind velocity
+                    <div className="with-unit">
+                        <input
+                            type="number"
+                            value={values.wind}
+                            onChange={(e) => onValueChange({ ...values, wind: e.target.value })}
+                            min={0}
+                            step={0.1}
+                        />{" "}
+                        m/s
+                    </div>
+                </label>
+                <label className="form-group">
+                    Fuselage length
+                    <div className="with-unit">
+                        <input
+                            type="number"
+                            value={values.length}
+                            onChange={(e) => onValueChange({ ...values, length: e.target.value })}
+                            min={0}
+                            step={0.1}
+                        />{" "}
+                        m
+                    </div>
+                </label>
+                <label className="form-group">
+                    Fuselage Diameter
+                    <div className="with-unit">
+                        <input
+                            type="number"
+                            value={values.diameter}
+                            onChange={(e) => onValueChange({ ...values, diameter: e.target.value })}
+                            min={0}
+                            step={0.001}
+                        />{" "}
+                        m
+                    </div>
+                </label>
+                <label className="form-group">
+                    Fin Span
+                    <div className="with-unit">
+                        <input
+                            type="number"
+                            value={values.finSpan}
+                            onChange={(e) => onValueChange({ ...values, finSpan: e.target.value })}
+                            min={0}
+                            step={0.001}
+                        />{" "}
+                        m
+                    </div>
+                </label>
+                <label className="form-group">
+                    Fin Chord
+                    <div className="with-unit">
+                        <input
+                            type="number"
+                            value={values.finChord}
+                            onChange={(e) => onValueChange({ ...values, finChord: e.target.value })}
+                            min={0}
+                            step={0.001}
+                        />{" "}
+                        m
                     </div>
                 </label>
                 <button className="primary" type="submit">

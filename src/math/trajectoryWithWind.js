@@ -1,16 +1,22 @@
-export default () => {
+export default (
+    wind = 0,
+    payloadMass = 0,
+    thrust = 300,
+    burnout = 1,
+    length = 1.5,
+    diameter = 0.038,
+    finSpan = 0.02,
+    finChord = 0.2
+) => {
     return (dydt, y, t) => {
-        let wind = 0; // wind speed (m/s)
-        let payloadMass = 0; // payload mass (kg)
-        let length = 1.5; // fuselage length (m)
-        let diameter = 0.038; // fuselage diameter (m)
-        let thrust = 300; // thrust (N)
-        let burnout = 1; // duration of thrust (s)
-        let finSpan = 0.02; // span of fin (m)
-        let finChord = 0.2; // chord of fin (m)
-
-        let windH;
-        let windV;
+        // let wind = 0; // wind speed (m/s)
+        // let payloadMass = 0; // payload mass (kg)
+        // let length = 1.5; // fuselage length (m)
+        // let diameter = 0.038; // fuselage diameter (m)
+        // let thrust = 300; // thrust (N)
+        // let burnout = 1; // duration of thrust (s)
+        // let finSpan = 0.02; // span of fin (m)
+        // let finChord = 0.2; // chord of fin (m)
 
         // constants
         const g = 9.8; // gravity
@@ -133,6 +139,7 @@ export default () => {
             fuselageMass +
             finMass +
             payloadMass;
+
         const W = totalMass * g;
 
         // end simulation if we've hit the ground already

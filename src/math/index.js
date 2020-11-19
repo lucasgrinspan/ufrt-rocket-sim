@@ -1,7 +1,7 @@
 import ode45 from "ode45-cash-karp";
 import funcGenerator from "./trajectoryWithWind";
 
-export default (weight, thrust, thrustDuration) => {
+export default (wind, weight, thrust, thrustDuration, length, diameter, finSpan, finChord) => {
     let data = [
         { id: "Altitude", data: [], axisBottom: "Time (s)", axisLeft: "Altitude (m)" },
         { id: "Velocity", data: [], axisBottom: "Time (s)", axisLeft: "Velocity (m/s)" },
@@ -17,7 +17,12 @@ export default (weight, thrust, thrustDuration) => {
     let y0 = [0, 0, 0, 0, Math.PI / 2, 0];
     let t0 = 0;
     let dt = 0.0001;
-    let integrator = ode45(y0, funcGenerator(), t0, dt);
+    let integrator = ode45(
+        y0,
+        funcGenerator(wind, weight, thrust, thrustDuration, length, diameter, finSpan, finChord),
+        t0,
+        dt
+    );
 
     let tmax = 12;
     let counter = 0;
