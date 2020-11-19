@@ -27,7 +27,7 @@ const Inputs = ({ onPresetSave, values, onValueChange, onCalculate }) => {
                         <input
                             type="number"
                             value={values.weight}
-                            onChange={(e) => onValueChange({ ...values, weight: e.target.value })}
+                            onChange={(e) => onValueChange({ ...values, weight: +e.target.value })}
                             min={0}
                             step={0.1}
                         />{" "}
@@ -40,7 +40,7 @@ const Inputs = ({ onPresetSave, values, onValueChange, onCalculate }) => {
                         <input
                             type="number"
                             value={values.thrust}
-                            onChange={(e) => onValueChange({ ...values, thrust: e.target.value })}
+                            onChange={(e) => onValueChange({ ...values, thrust: +e.target.value })}
                             min={0}
                             step={0.1}
                         />{" "}
@@ -54,7 +54,7 @@ const Inputs = ({ onPresetSave, values, onValueChange, onCalculate }) => {
                             type="number"
                             value={values.thrustDuration}
                             onChange={(e) =>
-                                onValueChange({ ...values, thrustDuration: e.target.value })
+                                onValueChange({ ...values, thrustDuration: +e.target.value })
                             }
                             min={0}
                             step={0.1}
@@ -68,7 +68,7 @@ const Inputs = ({ onPresetSave, values, onValueChange, onCalculate }) => {
                         <input
                             type="number"
                             value={values.wind}
-                            onChange={(e) => onValueChange({ ...values, wind: e.target.value })}
+                            onChange={(e) => onValueChange({ ...values, wind: +e.target.value })}
                             min={0}
                             step={0.1}
                         />{" "}
@@ -81,7 +81,7 @@ const Inputs = ({ onPresetSave, values, onValueChange, onCalculate }) => {
                         <input
                             type="number"
                             value={values.length}
-                            onChange={(e) => onValueChange({ ...values, length: e.target.value })}
+                            onChange={(e) => onValueChange({ ...values, length: +e.target.value })}
                             min={0}
                             step={0.1}
                         />{" "}
@@ -94,7 +94,9 @@ const Inputs = ({ onPresetSave, values, onValueChange, onCalculate }) => {
                         <input
                             type="number"
                             value={values.diameter}
-                            onChange={(e) => onValueChange({ ...values, diameter: e.target.value })}
+                            onChange={(e) =>
+                                onValueChange({ ...values, diameter: +e.target.value })
+                            }
                             min={0}
                             step={0.001}
                         />{" "}
@@ -107,7 +109,7 @@ const Inputs = ({ onPresetSave, values, onValueChange, onCalculate }) => {
                         <input
                             type="number"
                             value={values.finSpan}
-                            onChange={(e) => onValueChange({ ...values, finSpan: e.target.value })}
+                            onChange={(e) => onValueChange({ ...values, finSpan: +e.target.value })}
                             min={0}
                             step={0.001}
                         />{" "}
@@ -120,7 +122,9 @@ const Inputs = ({ onPresetSave, values, onValueChange, onCalculate }) => {
                         <input
                             type="number"
                             value={values.finChord}
-                            onChange={(e) => onValueChange({ ...values, finChord: e.target.value })}
+                            onChange={(e) =>
+                                onValueChange({ ...values, finChord: +e.target.value })
+                            }
                             min={0}
                             step={0.001}
                         />{" "}
