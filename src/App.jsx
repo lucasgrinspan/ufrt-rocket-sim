@@ -4,6 +4,7 @@ import Inputs from "./components/Input";
 import Simulations from "./components/Simulations";
 import GraphPanel from "./components/GraphPanel/GraphPanel";
 import solveTrajectory from "./math/index";
+import { deletePreset, getPresets, savePreset } from "./local";
 
 const App = () => {
     const initialValues = {
@@ -19,6 +20,20 @@ const App = () => {
     const [data, setData] = useState(undefined);
     const [presets, setPresets] = useState([]);
     const [values, setValues] = useState(initialValues);
+
+    const addPreset = (preset) => {
+        setPresets([...presets, preset]);
+        savePreset(preset);
+    };
+
+    const removePreset = (index) => {
+        let newPresets = presets.filter((v, i) => {
+            return i !== index;
+        });
+        deletePreset(index);
+
+        setPresets(newPresets);
+    };
 
     const calculate = (v) => {
         if (v) {
@@ -48,15 +63,18 @@ const App = () => {
         }
     };
 
-    useEffect(() => calculate(), []);
+    useEffect(() => {
+        calculate();
+        setPresets(getPresets());
+    }, []);
 
     return (
         <div className="container">
             <h1>Rocket Simulator</h1>
             <div className="main">
-                <GraphPanel data={data} thrustEnd={values.thrustDuration} />
+                <GraphPanel data={data} />
                 <Inputs
-                    onPresetSave={(d) => setPresets([...presets, d])}
+                    onPresetSave={addPreset}
                     values={values}
                     onValueChange={(v) => setValues(v)}
                     onCalculate={calculate}
@@ -67,6 +85,7 @@ const App = () => {
                         setValues(preset);
                         calculate(preset);
                     }}
+                    deletePreset={removePreset}
                 ></Simulations>
             </div>
         </div>

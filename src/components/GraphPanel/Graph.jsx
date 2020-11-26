@@ -2,7 +2,7 @@ import React, { useMemo } from "react";
 import { ResponsiveLine } from "@nivo/line";
 import Graph3D from "./Graph3D";
 
-const Graph = ({ data, thrustEnd }) => {
+const Graph = ({ data }) => {
     if (data) {
         return (
             <div className="graph">
@@ -35,19 +35,21 @@ const Graph = ({ data, thrustEnd }) => {
                         enableCrosshair
                         yFormat=" >-.3f"
                         xFormat=" >-.2f"
-                        markers={[
-                            {
-                                axis: "x",
-                                value: thrustEnd,
-                                lineStyle: {
-                                    stroke: "#b0413e",
-                                    strokeWidth: 2,
-                                    strokeDasharray: "5 10",
+                        markers={
+                            data.thrustEnd && [
+                                {
+                                    axis: "x",
+                                    value: data.thrustEnd,
+                                    lineStyle: {
+                                        stroke: "#b0413e",
+                                        strokeWidth: 2,
+                                        strokeDasharray: "5 10",
+                                    },
+                                    legend: "Thrust ends",
+                                    legendOrientation: "horizontal",
                                 },
-                                legend: "Thrust ends",
-                                legendOrientation: "horizontal",
-                            },
-                        ]}
+                            ]
+                        }
                     />
                 ) : (
                     <Graph3D data={data} />

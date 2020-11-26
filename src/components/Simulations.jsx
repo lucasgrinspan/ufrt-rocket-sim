@@ -6,7 +6,7 @@ const EmptyListComponent = () => (
     </div>
 );
 
-const Simulations = ({ presets, loadPreset }) => {
+const Simulations = ({ presets, loadPreset, deletePreset }) => {
     return (
         <div className="simulations card">
             <h2>Simulations</h2>
@@ -23,14 +23,23 @@ const Simulations = ({ presets, loadPreset }) => {
                                     ΔT:{" "}
                                     <span className="preset-value">{preset.thrustDuration}</span>
                                     v: <span className="preset-value">{preset.wind}</span>
+                                    FL: <span className="preset-value">{preset.length}</span>
+                                    FD: <span className="preset-value">{preset.diameter}</span>
+                                    FS: <span className="preset-value">{preset.finSpan}</span>
+                                    FC: <span className="preset-value">{preset.finChord}</span>
                                 </p>
-                                <button
-                                    type="button"
-                                    className="primary"
-                                    onClick={() => loadPreset(preset)}
-                                >
-                                    Load
-                                </button>
+                                <div className="button-container">
+                                    <button className="danger" onClick={() => deletePreset(index)}>
+                                        Delete
+                                    </button>
+                                    <button
+                                        type="button"
+                                        className="primary"
+                                        onClick={() => loadPreset(preset)}
+                                    >
+                                        Load
+                                    </button>
+                                </div>
                             </div>
                         );
                     })}

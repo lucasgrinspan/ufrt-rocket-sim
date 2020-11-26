@@ -3,8 +3,20 @@ import funcGenerator from "./trajectoryWithWind";
 
 export default (wind, weight, thrust, thrustDuration, length, diameter, finSpan, finChord) => {
     let data = [
-        { id: "Altitude", data: [], axisBottom: "Time (s)", axisLeft: "Altitude (m)" },
-        { id: "Velocity", data: [], axisBottom: "Time (s)", axisLeft: "Velocity (m/s)" },
+        {
+            id: "Altitude",
+            data: [],
+            axisBottom: "Time (s)",
+            axisLeft: "Altitude (m)",
+            thrustEnd: thrustDuration,
+        },
+        {
+            id: "Velocity",
+            data: [],
+            axisBottom: "Time (s)",
+            axisLeft: "Velocity (m/s)",
+            thrustEnd: thrustDuration,
+        },
         { id: "Downrange", data: [], axisBottom: "Downrange (m)", axisLeft: "Altitude (m)" },
         {
             id: "Trajectory",

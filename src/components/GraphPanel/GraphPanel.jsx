@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Graph from "./Graph";
 
-const GraphPanel = ({ data, thrustEnd }) => {
+const GraphPanel = ({ data }) => {
     const [selectedGraph, setSelectedGraph] = useState(0);
 
     let selectedData;
@@ -25,7 +25,7 @@ const GraphPanel = ({ data, thrustEnd }) => {
                     })}
             </div>
             <div>
-                <Graph data={selectedData} thrustEnd={thrustEnd} />
+                <Graph data={selectedData} />
             </div>
         </div>
     );
