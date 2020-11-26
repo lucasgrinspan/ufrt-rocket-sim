@@ -134,12 +134,18 @@ button[type="submit"] {
 }
 .main {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     width: 100%;
     justify-content: center;
 }
-.main > * {
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.row > * {
     margin: var(--gutter);
 }
 @media only screen and (max-width: 1600px) {
@@ -157,8 +163,7 @@ button[type="submit"] {
     box-shadow: var(--shadow);
 }
 .graph-container {
-    flex-grow: 1;
-    margin-top: var(--gutter);
+    margin-bottom: var(--gutter);
 }
 .inputs {
     flex: 1;
@@ -166,6 +171,41 @@ button[type="submit"] {
 }
 .simulations {
     width: 100%;
+}
+.details {
+    margin-top: var(--gutter);
+    height: 100%;
+}
+.data-section {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: stretch;
+}
+.data-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 60px;
+}
+.data-point-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.data-label {
+    text-transform: uppercase;
+    color: var(--text-medium);
+    letter-spacing: 0.1em;
+    text-align: center;
+}
+.data-value {
+    font-size: 3rem;
+    color: var(--blue);
+    margin: 0;
+}
+.data-unit {
+    font-size: 2rem;
 }
 .card {
     background-color: white;

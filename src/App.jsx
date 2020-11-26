@@ -5,6 +5,7 @@ import Simulations from "./components/Simulations";
 import GraphPanel from "./components/GraphPanel/GraphPanel";
 import solveTrajectory from "./math/index";
 import { deletePreset, getPresets, savePreset } from "./local";
+import Details from "./components/Details";
 
 const App = () => {
     const initialValues = {
@@ -72,21 +73,28 @@ const App = () => {
         <div className="container">
             <h1>Rocket Simulator</h1>
             <div className="main">
-                <GraphPanel data={data} />
-                <Inputs
-                    onPresetSave={addPreset}
-                    values={values}
-                    onValueChange={(v) => setValues(v)}
-                    onCalculate={calculate}
-                ></Inputs>
-                <Simulations
-                    presets={presets}
-                    loadPreset={(preset) => {
-                        setValues(preset);
-                        calculate(preset);
-                    }}
-                    deletePreset={removePreset}
-                ></Simulations>
+                <div className="row">
+                    <div className="data-section">
+                        <GraphPanel data={data} />
+                        <Details data={data} />
+                    </div>
+                    <Inputs
+                        onPresetSave={addPreset}
+                        values={values}
+                        onValueChange={(v) => setValues(v)}
+                        onCalculate={calculate}
+                    />
+                </div>
+                <div className="row">
+                    <Simulations
+                        presets={presets}
+                        loadPreset={(preset) => {
+                            setValues(preset);
+                            calculate(preset);
+                        }}
+                        deletePreset={removePreset}
+                    />
+                </div>
             </div>
         </div>
     );
