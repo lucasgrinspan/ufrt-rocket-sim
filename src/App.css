@@ -33,6 +33,10 @@ h2 {
     margin: 0;
     margin-bottom: 10px;
 }
+.wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+}
 input {
     background-color: #ffffff;
     padding: 10px;
@@ -126,7 +130,7 @@ button[type="submit"] {
 .title-row h2 {
     margin-bottom: 0;
 }
-.container {
+.app-container {
     margin-left: auto;
     margin-right: auto;
     width: 100%;

@@ -70,7 +70,7 @@ const App = () => {
     }, []);
 
     return (
-        <div className="container">
+        <div className="app-container">
             <h1>Rocket Simulator</h1>
             <div className="main">
                 <div className="row">
