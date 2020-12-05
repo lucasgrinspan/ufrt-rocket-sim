@@ -33,17 +33,12 @@ h2 {
     margin: 0;
     margin-bottom: 10px;
 }
-.wrap {
-    width: 100% !important;
-    max-width: 100% !important;
-}
 input {
-    background-color: #ffffff;
-    padding: 10px;
-    border-radius: 5px;
-    border: var(--interactable-border);
-    font-size: 1rem;
-    box-shadow: var(--shadow);
+    padding: 10px !important;
+    border-radius: 5px !important;
+    border: var(--interactable-border) !important;
+    font-size: 1rem !important;
+    box-shadow: var(--shadow) !important;
 }
 input[type="number"] {
     width: calc(5ch + 10px);
@@ -56,9 +51,9 @@ input[type="number"]::-webkit-outer-spin-button {
     margin: 0;
 }
 input:focus {
-    border: var(--interactable-border-focus);
-    outline: none;
-    box-shadow: var(--inner-shadow);
+    border: var(--interactable-border-focus) !important;
+    outline: none !important;
+    box-shadow: var(--inner-shadow) !important;
 }
 button {
     background-color: #ffffff;
@@ -69,6 +64,10 @@ button {
     border: none;
     color: #000000;
     transition: all 100ms ease-in-out;
+}
+.wrap {
+    max-width: 100% !important;
+    width: 100% !important;
 }
 button:active {
     box-shadow: var(--inner-shadow);
