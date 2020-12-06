@@ -37,24 +37,26 @@ const Details = ({ data }) => {
     return (
         <div className="details card">
             <h2>Details</h2>
-            <div className="data-container">
-                <div className="data-point-container">
-                    <p className="data-value">
-                        {maxSpeed.toFixed(1)} <span className="data-unit">m/s</span>
-                    </p>
-                    <p className="data-label">Max Speed</p>
-                </div>
-                <div className="data-point-container">
-                    <p className="data-value">
-                        {apogee.toFixed(1)} <span className="data-unit">m</span>
-                    </p>
-                    <p className="data-label">Apogee</p>
-                </div>
-                <div className="data-point-container">
-                    <p className="data-value">
-                        {distanceTravelled.toFixed(1)} <span className="data-unit">m</span>
-                    </p>
-                    <p className="data-label">Downrange</p>
+            <div className="vcenter">
+                <div className="data-container">
+                    <div className="data-point-container">
+                        <p className="data-value">
+                            {maxSpeed.toFixed(1)} <span className="data-unit">m/s</span>
+                        </p>
+                        <p className="data-label">Max Speed</p>
+                    </div>
+                    <div className="data-point-container">
+                        <p className="data-value">
+                            {apogee.toFixed(1)} <span className="data-unit">m</span>
+                        </p>
+                        <p className="data-label">Apogee</p>
+                    </div>
+                    <div className="data-point-container">
+                        <p className="data-value">
+                            {distanceTravelled.toFixed(1)} <span className="data-unit">m</span>
+                        </p>
+                        <p className="data-label">Downrange</p>
+                    </div>
                 </div>
             </div>
         </div>

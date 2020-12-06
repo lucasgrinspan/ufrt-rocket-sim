@@ -180,6 +180,13 @@ button[type="submit"] {
     margin-top: var(--gutter);
     height: 100%;
 }
+.vcenter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
 .data-section {
     display: flex;
     flex-direction: column;
@@ -187,15 +194,22 @@ button[type="submit"] {
     align-items: stretch;
 }
 .data-container {
-    display: grid;
+    /* display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    margin-top: 60px;
+    margin-top: 60px; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: -30px;
 }
 .data-point-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin: 0 10px;
+    padding: 10px 0;
 }
 .data-label {
     text-transform: uppercase;
@@ -207,6 +221,7 @@ button[type="submit"] {
     font-size: 3rem;
     color: var(--blue);
     margin: 0;
+    white-space: nowrap;
 }
 .data-unit {
     font-size: 2rem;
@@ -225,8 +240,8 @@ button[type="submit"] {
 .form-group {
     display: flex;
     flex-direction: column;
-    max-width: 10rem;
-    width: 10rem;
+    max-width: 9rem;
+    width: 9rem;
     margin-bottom: 1rem;
 }
 .form-group.checkbox {
