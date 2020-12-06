@@ -125,6 +125,7 @@ button[type="submit"] {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 .title-row h2 {
     margin-bottom: 0;
@@ -216,10 +217,16 @@ button[type="submit"] {
     border-radius: 5px;
     box-shadow: var(--shadow);
 }
+.card form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
 .form-group {
     display: flex;
     flex-direction: column;
     max-width: 10rem;
+    width: 10rem;
     margin-bottom: 1rem;
 }
 .form-group.checkbox {

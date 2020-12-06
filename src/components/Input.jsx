@@ -9,18 +9,18 @@ const Inputs = ({ onPresetSave, values, onValueChange, onCalculate }) => {
 
     return (
         <div className="inputs card">
+            <div className="title-row">
+                <h2>Input</h2>
+                <button className="secondary" type="button" onClick={savePreset}>
+                    Add
+                </button>
+            </div>
             <form
                 onSubmit={(e) => {
                     e.preventDefault();
                     onCalculate();
                 }}
             >
-                <div className="title-row">
-                    <h2>Input</h2>
-                    <button className="secondary" type="button" onClick={savePreset}>
-                        Add
-                    </button>
-                </div>
                 <label className="form-group">
                     Weight
                     <div className="with-unit">
