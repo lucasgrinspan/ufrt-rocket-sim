@@ -118,10 +118,6 @@ button[type="submit"] {
 .navbar .brand-link img {
     height: 100%;
 }
-.navbar h1 {
-    /* I don't know why this is needed to align it with the logo */
-    margin-top: 2px;
-}
 .tabs {
     display: flex;
     flex-direction: row;
@@ -297,6 +293,7 @@ button[type="submit"] {
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
+    justify-content: space-between;
 }
 .preset button {
     margin: auto 0;
@@ -321,6 +318,7 @@ button[type="submit"] {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+    padding: 10px 0px;
 }
 .button-container > *:first-child {
     margin-right: 10px;

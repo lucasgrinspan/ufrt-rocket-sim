@@ -9,7 +9,7 @@ const GraphPanel = ({ data }) => {
         selectedData = data[selectedGraph];
     }
     return (
-        <div className="graph-container">
+        <div className="graph-container" id="graph-panel">
             <div className="tabs">
                 {data &&
                     data.map((series, index) => {

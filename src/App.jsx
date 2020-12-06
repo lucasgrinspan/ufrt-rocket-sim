@@ -37,7 +37,7 @@ const App = () => {
         setPresets(newPresets);
     };
 
-    const calculate = (v) => {
+    const calculate = (v, scroll = true) => {
         if (v) {
             const data = solveTrajectory(
                 v.wind,
@@ -63,11 +63,20 @@ const App = () => {
             );
             setData(data);
         }
+
+        if (scroll) {
+            // scroll to the graph panel
+            let graphPanel = document.querySelector("#graph-panel");
+            if (graphPanel) {
+                graphPanel.scrollIntoView({ behavior: "smooth" });
+            }
+        }
     };
 
     useEffect(() => {
-        calculate();
+        calculate(undefined, false);
         setPresets(getPresets());
+        console.log("Made by Lucas Grinspan");
     }, []);
 
     return (
