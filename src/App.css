@@ -3,14 +3,14 @@
     --green: #39ab39;
     --green-light: #54d365;
     --red: #dc3545;
+    --white: #ffffff;
     --text-light: #a4a4a4;
     --text-medium: #4a4a4a;
     --text-dark: #181818;
     --inner-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
     --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
     --bg: rgb(238, 238, 238);
-    --card: rgb(211, 211, 211);
-    --card-inactive: rgb(147, 147, 147);
+    --inactive: rgb(211, 211, 211);
     --gutter: 10px;
     --card-padding: 15px;
     --interactable-border: 1px solid #000000;
@@ -22,12 +22,12 @@ html {
 }
 body {
     background: var(--bg);
-    margin: var(--gutter);
-    margin-top: 0;
-    margin-bottom: 0;
+    margin: 0;
+    padding: 0;
 }
 h1 {
-    margin-bottom: 0;
+    margin: 0;
+    font-size: 2rem;
 }
 h2 {
     margin: 0;
@@ -56,7 +56,7 @@ input:focus {
     box-shadow: var(--inner-shadow) !important;
 }
 button {
-    background-color: #ffffff;
+    background-color: var(--white);
     border-radius: 5px;
     font-size: 1rem;
     padding: 10px;
@@ -91,18 +91,36 @@ button.danger {
 }
 button.primary:hover {
     background-color: var(--green);
-    color: #ffffff;
+    color: var(--white);
 }
 button.secondary:hover {
     background-color: var(--green);
-    color: #ffffff;
+    color: var(--white);
 }
 button.danger:hover {
     background-color: var(--red);
-    color: #ffffff;
+    color: var(--white);
 }
 button[type="submit"] {
     width: 100%;
+}
+.navbar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 36px;
+}
+.navbar .brand-link {
+    height: 100%;
+    margin-right: 15px;
+}
+.navbar .brand-link img {
+    height: 100%;
+}
+.navbar h1 {
+    /* I don't know why this is needed to align it with the logo */
+    margin-top: 2px;
 }
 .tabs {
     display: flex;
@@ -110,14 +128,14 @@ button[type="submit"] {
     justify-content: flex-start;
 }
 .tabs button {
-    background-color: var(--card);
+    background-color: var(--inactive);
     border-radius: 5px 5px 0 0;
     margin: 0;
     border: none;
     box-shadow: none;
 }
 .tabs button.active {
-    background-color: white;
+    background-color: var(--white);
 }
 .title-row {
     margin-bottom: 10px;
@@ -159,7 +177,7 @@ button[type="submit"] {
 }
 .graph {
     padding: 10px;
-    background-color: #ffffff;
+    background-color: var(--white);
     height: 400px;
     min-width: 300px;
     border-radius: 5px;
@@ -227,7 +245,7 @@ button[type="submit"] {
     font-size: 2rem;
 }
 .card {
-    background-color: white;
+    background-color: var(--white);
     padding: var(--card-padding);
     border-radius: 5px;
     box-shadow: var(--shadow);

@@ -6,6 +6,7 @@ import GraphPanel from "./components/GraphPanel/GraphPanel";
 import solveTrajectory from "./math/index";
 import { deletePreset, getPresets, savePreset } from "./local";
 import Details from "./components/Details";
+import Navbar from "./components/Navbar";
 
 const App = () => {
     const initialValues = {
@@ -70,33 +71,37 @@ const App = () => {
     }, []);
 
     return (
-        <div className="app-container">
-            <h1>Rocket Simulator</h1>
-            <div className="main">
-                <div className="row">
-                    <div className="data-section">
-                        <GraphPanel data={data} />
-                        <Details data={data} />
+        <React.Fragment>
+            <div className="app-container">
+                <div className="main">
+                    <div className="row">
+                        <Navbar />
                     </div>
-                    <Inputs
-                        onPresetSave={addPreset}
-                        values={values}
-                        onValueChange={(v) => setValues(v)}
-                        onCalculate={calculate}
-                    />
-                </div>
-                <div className="row">
-                    <Simulations
-                        presets={presets}
-                        loadPreset={(preset) => {
-                            setValues(preset);
-                            calculate(preset);
-                        }}
-                        deletePreset={removePreset}
-                    />
+                    <div className="row">
+                        <div className="data-section">
+                            <GraphPanel data={data} />
+                            <Details data={data} />
+                        </div>
+                        <Inputs
+                            onPresetSave={addPreset}
+                            values={values}
+                            onValueChange={(v) => setValues(v)}
+                            onCalculate={calculate}
+                        />
+                    </div>
+                    <div className="row">
+                        <Simulations
+                            presets={presets}
+                            loadPreset={(preset) => {
+                                setValues(preset);
+                                calculate(preset);
+                            }}
+                            deletePreset={removePreset}
+                        />
+                    </div>
                 </div>
             </div>
-        </div>
+        </React.Fragment>
     );
 };
 
