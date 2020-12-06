@@ -6,7 +6,7 @@ const Navbar = () => {
             <a className="brand-link" href="https://ufl-rocket-team.org">
                 <img src="./logo.webp" alt="UF Rocket Team" />
             </a>
-            <h1>Rocket Simulator</h1>
+            <h1>Rocket Sim</h1>
         </div>
     );
 };

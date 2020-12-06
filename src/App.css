@@ -130,6 +130,11 @@ button[type="submit"] {
     border: none;
     box-shadow: none;
 }
+@media only screen and (max-width: 500px) {
+    .tabs button {
+        font-size: 0.8rem;
+    }
+}
 .tabs button.active {
     background-color: var(--white);
 }
