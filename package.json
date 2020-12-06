@@ -24,7 +24,7 @@
     "bugs": {
         "url": "https://github.com/lucasgrinspan/ufrt-rocket-sim/issues"
     },
-    "homepage": "https://ufl-rocket-team.org/rocket-sim/react",
+    "homepage": "https://simulator.ufl-rocket-team.org",
     "devDependencies": {
         "@babel/cli": "^7.11.6",
         "@babel/core": "^7.11.6",
