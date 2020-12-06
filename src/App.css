@@ -277,7 +277,7 @@ button[type="submit"] {
     padding-right: var(--card-padding);
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    flex-wrap: nowrap;
     align-items: center;
 }
 .preset button {
@@ -286,10 +286,23 @@ button[type="submit"] {
 .preset-value {
     font-weight: bold;
     color: var(--text-dark);
+}
+.preset-value-container {
     margin-right: 2rem;
+    margin-bottom: 3px;
+    display: inline-block;
+}
+.preset-value-container:first-child {
+    margin-top: 6px;
+}
+.preset-value-container:last-child {
+    margin-bottom: 6px;
 }
 .button-container {
     height: min-content;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
 }
 .button-container > *:first-child {
     margin-right: 10px;
